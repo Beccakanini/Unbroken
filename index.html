@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unbroken</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/85cabcb393.js" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="./output.css">
+  
+     <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    .sidebar-transition { transition: transform 0.4s ease-in-out; }
+    .content-transition { transition: transform 0.4s ease-in-out; }
+
+    /* Glassmorphism sidebar */
+    .glass-sidebar {
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(15, 23, 42, 0.65);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Typewriter effect */
+    .typewriter {
+      display: inline-block;
+      border-right: 2px solid #FFD700;
+      white-space: pre-wrap;
+      overflow: hidden;
+      animation: blinkCursor 0.8s steps(1) infinite;
+    }
+    @keyframes blinkCursor {
+      50% { border-color: transparent; }
+    }
+  </style>
+  
+
+</head>
+<body class=" overflow-x-hidden">
+
+
+<!-- Sidebar -->
+<div id="sidebar" class="fixed top-0 left-0 h-full w-64  shadow-2xl sidebar-transition z-40 transform -translate-x-full  bg-[#B8860B]  bg-cover bg-center border-r-2 border-[#B8860B]">
+  <div class="h-full flex flex-col justify-between py-8 px-6 text-white">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-8">
+      <span id="sidebar-title" class="text-2xl font-extrabold tracking-widest uppercase typewriter" style="font-family: 'Montserrat', serif; letter-spacing:0.15em;">
+        <!-- Typewriter text will appear here -->
+      </span>
+      <button id="closeSidebar" class="text-3xl font-bold hover:text-[#0a0a0a] transition">&times;</button>
+    </div>
+    <!-- Navigation -->
+    <nav class="flex-1">
+      <ul class="space-y-6 text-lg font-semibold tracking-wide uppercase">
+        <li><a href="#home" class="block border-b-2 border-transparent hover:border-[#0a0a0a] hover:text-[#0a0a0a] pb-1 transition">Home</a></li>
+        <li><a href="#meet-zaffar-khan" class="block border-b-2 border-transparent hover:border-[#0a0a0a] hover:text-[#0a0a0a] pb-1 transition">About</a></li>
+        <li><a href="#impact" class="block border-b-2 border-transparent hover:border-[#0a0a0a] hover:text-[#0a0a0a] pb-1 transition">Impact & Legacy</a></li>
+        <li><a href="#stories" class="block border-b-2 border-transparent hover:border-[#0a0a0a] hover:text-[#0a0a0a] pb-1 transition">Community Voices</a></li>
+        <li><a href="#watch-documentary" class="block border-b-2 border-transparent hover:border-[#0a0a0a] hover:text-[#0a0a0a] pb-1 transition">Watch</a></li>
+        <li><a href="#get-involved" class="block border-b-2 border-transparent hover:border-[#0a0a0a] hover:text-[#0a0a0a] pb-1 transition">Get Involved</a></li>
+        <li><a href="#press-kit" class="block border-b-2 border-transparent hover:border-[#0a0a0a] hover:text-[#0a0a0a] pb-1 transition">Press Kit</a></li>
+        <!-- <li><a href="#contact" class="block border-b-2 border-transparent hover:border-[#0a0a0a] hover:text-[#0a0a0a] pb-1 transition">Contact</a></li> -->
+      </ul>
+    </nav>
+    <!-- Social Media -->
+    <div class="flex items-center justify-center gap-6 mt-10">
+      <a href="https://www.facebook.com/profile.php?id=61579449914951" target="_blank" class=" hover:text-blue-700">
+        <i class="fab fa-facebook-f text-2xl"></i>
+      </a>
+      <a href="https://x.com/unnbroken61" target="_blank" class=" hover:text-gray-400">
+        <i class="fab fa-x-twitter text-2xl"></i>
+      </a>
+      <a href="https://www.instagram.com/unbroken.61/?utm_source=ig_web_button_share_sheet" target="_blank" class=" hover:text-pink-600">
+        <i class="fab fa-instagram text-2xl"></i>
+      </a>
+      <a href="https://www.youtube.com/@UnbrokenVoice_61" target="_blank" class="hover:text-red-500">
+        <i class="fab fa-youtube text-2xl"></i>
+      </a>
+    </div>
+    <div class="mt-10 text-xs text-[#0a0a0a] text-center tracking-widest uppercase" style="font-family: 'Montserrat', serif;">
+      © 2025 UNBROKEN
+    </div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div id="home" class="content-transition">
+  <!-- Menu Button -->
+  <button id="menu-btn" aria-label="Toggle Menu" 
+    class="fixed top-5 left-5 z-50 p-3 bg-black bg-opacity-50 text-white rounded-lg shadow-lg">
+    ☰
+  </button>
+
+  <!-- Hero Section Video -->
+<section 
+  class="relative min-h-screen flex items-center justify-center bg-black overflow-hidden font-montserrat"
+>
+  <!-- Background video -->
+  <video 
+    class="absolute top-0 left-0 w-full h-full object-cover"
+    id="bgVideo"
+    src="https://res.cloudinary.com/dmuk4lrle/video/upload/v1756209870/KHAN_DARK_zohcr3.mp4"
+    autoplay 
+    loop 
+    muted 
+    playsinline
+  ></video>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 w-full max-w-screen-2xl mx-auto">
+    
+    <!-- Hero Title -->
+    <h1 
+      id="hero-typewriter" 
+      class="typewriter-hero flex flex-wrap flex-col 
+             text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 
+             uppercase tracking-widest text-white mb-6 drop-shadow-lg font-bold"
+    >
+      <!-- Typewriter effect will appear here -->
+    </h1>
+
+    <!-- Subtitle -->
+    <p 
+      class="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-3xl 
+             text-gray-200 italic font-medium mb-10"
+    >
+      Every hard moment formed the foundation for my rise.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+      <a href="#watch-documentary" 
+         class="cta-underline text-sm sm:text-md md:text-lg lg:text-xl font-bold uppercase tracking-widest text-white px-8 py-3 rounded transition relative group">
+        Watch Now
+        <span class="cta-underline-bar"></span>
+      </a>
+      <a href="#get-involved" 
+         class="cta-underline text-sm sm:text-md md:text-lg lg:text-xl font-bold uppercase tracking-widest text-white px-8 py-3 rounded transition relative group">
+        Get Involved
+        <span class="cta-underline-bar"></span>
+      </a>
+      <a href="#stories" 
+         class="cta-underline text-sm sm:text-md md:text-lg lg:text-xl font-bold uppercase tracking-widest text-white px-8 py-3 rounded transition relative group">
+        Voices from the Community
+        <span class="cta-underline-bar"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+  
+    <style>
+    /* ...existing styles... */
+    .typewriter-hero {
+      display: inline-block;
+      border-right: 3px solid #B8860B;
+      white-space: pre-wrap;
+      overflow: hidden;
+      min-height: 2.5em;
+      letter-spacing: 0.12em;
+    }
+    .typewriter {
+      display: inline-block;
+      border-right: 2px solid #FFD700;
+      white-space: pre-wrap;
+      overflow: hidden;
+    }
+    /* Remove animation: blinkHeroCursor and blinkCursor */
+    .cta-underline {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .cta-underline-bar {
+      display: block;
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #B8860B 60%, #fff 100%);
+      border-radius: 2px;
+      transform: scaleX(0);
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    }
+    .cta-underline:hover .cta-underline-bar,
+    .cta-underline:focus .cta-underline-bar,
+    .cta-underline.group:focus .cta-underline-bar {
+      transform: scaleX(1);
+    }
+    .cta-underline-bar {
+      pointer-events: none;
+    }
+  </style>
+  
+  
+
+  <!-- Who We Are Section -->
+   <section 
+  class="relative min-h-screen flex items-center justify-center bg-black text-white px-6"
+  id="about"
+>
+  <div class="absolute inset-0"></div>
+
+  
+  <div class="relative flex flex-col text-center w-full 
+              max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl">
+    <h2 class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-bold mb-6 tracking-widest">UNBROKEN</h2>
+    <p id="storyText" class="typewriter-story text-lg md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-relaxed">
+      <!-- Typewriter effect  -->
+    </p>
+  </div>
+</section>
+
+  
+  <style>
+  .typewriter-story {
+    display: inline-block;
+    border-right: 2px solid #FFD700;
+    white-space: pre-wrap;
+    overflow: hidden;
+    min-height: 3.5em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.01em;
+  }
+  .typewriter-highlight {
+    color: #B8860B;
+    font-weight: bold;
+    background: linear-gradient(90deg, #B8860B 60%, #fffbe6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0 0.2em;
+    border-radius: 0.2em;
+    box-decoration-break: clone;
+  }
+  </style>
+
+
+<!-- Meet Zaffar Khan -->
+<section id="meet-zaffar-khan" class="relative mx-auto py-20 px-6 lg:px-6 xl:px-12 2xl:px-16 bg-[#efefef] border-y-4 font-montserrat overflow-hidden">
+  <div class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center relative z-10">
+
+    <!-- Image Stack -->
+    <div class="order-1 lg:order-1 col-span-2 mx-auto flex py-6 flex-wrap justify-center items-center gap-8 self-center">
+  <!-- First Image (always visible) -->
+  <div class="flex-1 w-auto xs:h-72 sm:h-72 md:h-80 lg:h-96 xl:h-96 rounded-2xl overflow-hidden shadow-2xl 
+              border-4 border-[#B8860B]/70 bg-white hover:scale-105 transition duration-500">
+    <img src="https://iili.io/Kn3cr7I.jpg" alt="Zaffar Khan"
+         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"
+         loading="lazy">
+  </div>
+
+  <!-- Second Image (hidden on mobile, visible from sm+) -->
+  <div class="hidden w-auto sm:block xs:h-72 flex-1  sm:h-72 md:h-80 lg:h-96 xl:h-96 rounded-2xl overflow-hidden 
+              shadow-2xl border-4 border-[#1E3A8A]/70 bg-white hover:scale-105 transition duration-500">
+    <img src="https://iili.io/Kn3lfrQ.jpg" alt="Zaffar Khan"
+         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"
+         loading="lazy">
+  </div>
+
+  <!-- Third Image (hidden on mobile, visible from md+) -->
+
+  <div class="hidden md:block flex-1 max-w-sm  xs:h-72 sm:h-72 md:h-80 lg:h-96 xl:h-96 rounded-2xl overflow-hidden
+              shadow-2xl border-4 border-[#8B4513]/70 bg-white hover:scale-105 transition duration-500">
+    <img src="https://iili.io/Kn3l2Lb.jpg" alt="Zaffar Khan"
+         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"
+         loading="lazy">
+  </div>
+ 
+</div>
+
+
+    <!-- Content Card -->
+    <div class="w-full max-w-3xl lg:max-w-4xl xl:max-w-5xl text-left bg-white/95 rounded-2xl border-l-8 border-[#B8860B] py-12 px-8 mx-auto order-2 lg:order-2 col-span-3 bg-white/90 rounded-2xl shadow-xl p-8 sm:p-10 lg:p-12 border-l-8 border-[#B8860B] relative flex flex-col justify-between">
+      
+      <!-- Label -->
+      <span class="absolute -top-6 sm:-top-8 left-0 bg-[#181818] text-[#F5F5DC] px-6 px-6 mb-4 py-1 rounded-t-lg font-bold text-[0.65rem] sm:text-xs tracking-[0.18em] shadow uppercase">
+        FEATURED STORY
+      </span>
+
+      <!-- Title -->
+      <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-wide text-[#181818] mb-6 py-2 leading-snug">
+        Meet Zaffar Khan
+      </h2>
+
+      <!-- Highlighted paragraph -->
+      <p class="text-base sm:text-lg md:text-xl leading-relaxed text-[#181818] font-medium italic border-l-4 border-[#8B4513] pl-4">
+        Zaffar Khan exemplifies the strength of the human spirit.  
+        A dedicated community leader, advocate for people with disabilities,  
+        and active member of the Rotary Club, Zaffar has spent his life in service to others.
+      </p>
+
+      <!-- Supporting paragraph -->
+      <p class="mt-4 text-sm sm:text-base md:text-lg leading-relaxed text-[#181818]/90">
+        When faced with unprecedented challenges, he demonstrated that true leadership means rising above circumstances and continuing to serve with grace, dignity, and unwavering commitment. His story is one of transformation — showing how personal trials can become sources of strength and inspiration for others.
+      </p>
+
+      <!-- Tags -->
+      <div class="flex gap-3 sm:gap-4 mt-6 flex-wrap">
+        <span class="inline-block px-3 sm:px-4 py-1 bg-[#B8860B]/90 text-[#181818] font-bold uppercase text-[0.65rem] sm:text-xs rounded shadow tracking-widest border border-[#B8860B]">Resilience</span>
+        <span class="inline-block px-3 sm:px-4 py-1 bg-[#1E3A8A]/90 text-[#F5F5DC] font-bold uppercase text-[0.65rem] sm:text-xs rounded shadow tracking-widest border border-[#1E3A8A]">Leadership</span>
+        <span class="inline-block px-3 sm:px-4 py-1 bg-[#8B4513]/90 text-[#F5F5DC] font-bold uppercase text-[0.65rem] sm:text-xs rounded shadow tracking-widest border border-[#8B4513]">Community</span>
+      </div>
+
+      <!-- Author -->
+      <div class="mt-8 text-[0.65rem] sm:text-xs text-[#8B4513] tracking-widest uppercase italic">
+        By Eric Kagorora &mdash; Filmmaker and Producer, 2025
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- Film Maker Section -->
+<section class="relative w-full py-12 px-6 lg:px-20 bg-[#F5F5DC] font-montserrat overflow-hidden">
+  <!-- Title -->
+  <div class="text-center mb-16">
+    <span class="inline-block bg-[#181818] text-[#F5F5DC] px-8 py-2 rounded-t-lg font-bold text-xs tracking-[0.18em] shadow uppercase mb-4">
+      FEATURED PROFILE
+    </span>
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-widest text-[#181818] mb-2">
+      The Film maker <span class="text-[#B8860B]">—</span> Eric Kagorora
+    </h2>
+  </div>
+
+  <!-- Content -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-12 items-start">
+    <!-- Image -->
+ <div class="flex overflow-hidden mx-auto rounded-2xl shadow-xl border-4 border-[#B8860B]/60 bg-white 
+              xs:h-64 sm:h-72 md:h-80 lg:h-[26rem] xl:h-[30rem] 2xl:h-[34rem] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
+    <img src="https://iili.io/KnFz0du.jpg"
+      alt="Eric Kagorora"
+      class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"
+      loading="lazy"
+    >
+  </div>
+    <!-- Text -->
+    <div class="w-full max-w-3xl lg:max-w-4xl xl:max-w-5xl text-left bg-white/95 rounded-2xl border-l-8 border-[#B8860B] py-12 px-8 mx-auto">
+      <span class="inline-block bg-[#8B4513] text-[#F5F5DC] px-6 py-1 rounded-t-lg font-bold text-xs tracking-[0.18em] shadow uppercase mb-6">
+        IN HIS OWN WORDS
+      </span>
+
+      <p class="text-[#181818] text-lg leading-relaxed font-medium mb-6">
+        <span class="float-left text-5xl font-extrabold text-[#B8860B] pr-2">E</span>
+        ric Kagorora is more than a film maker—he is a storyteller, a cultural bridge, and a passionate advocate for healing through art. As the founder of Imanzi Cultural Collective Australia, Eric brings a unique blend of lived experience and creative vision to <span class="text-[#8B4513] font-bold">UNBROKEN</span>.
+      </p>
+
+      <blockquote class="border-l-4 border-[#1E3A8A] pl-6 italic text-[#1E3A8A] text-base mb-6">
+        “Film is not just a medium for me—it’s a way to give voice to the unheard, to transform pain into purpose, and to inspire hope where it’s needed most.”
+      </blockquote>
+
+      <p class="text-[#181818] text-lg leading-relaxed font-medium mb-8">
+        Through trauma-informed storytelling and a deep commitment to cultural healing, Eric uses the power of film to illuminate resilience and foster lasting change. His work is a testament to the strength found in community, the importance of representation, and the enduring impact of sharing our stories.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <span class="inline-block px-4 py-1 bg-[#B8860B]/90 text-[#181818] font-bold uppercase text-xs rounded shadow tracking-widest border border-[#B8860B]">Storyteller</span>
+        <span class="inline-block px-4 py-1 bg-[#1E3A8A]/90 text-[#F5F5DC] font-bold uppercase text-xs rounded shadow tracking-widest border border-[#1E3A8A]">Advocate</span>
+        <span class="inline-block px-4 py-1 bg-[#8B4513]/90 text-[#F5F5DC] font-bold uppercase text-xs rounded shadow tracking-widest border border-[#8B4513]">Visionary</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="relative w-full bg-white display:flex flex-direction:row py-20 font-montserrat flex-wrap   mx-auto" id="voices">
+  <div class="max-w-6xl mx-auto px-6 space-y-20">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-4xl font-extrabold uppercase tracking-widest text-gray-900 mb-3">
+        Community Voices
+      </h2>
+      <p class="mt-4 text-gray-700 italic max-w-2xl mx-auto">
+        Perspectives from the people who know, have worked with, and were uplifted by Zaffar Khan.
+      </p>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="border-t border-b border-gray-300 py-6">
+      <h3 class="text-2xl font-bold uppercase tracking-wide text-gray-900 border-b-2 border-[#B8860B] inline-block pb-1 mb-4">
+        Pakistani Community
+      </h3>
+      <p class="text-gray-700 mb-8 leading-relaxed italic max-w-3xl">
+        “The heart of the community knows him as a guiding force — a voice of dignity and resilience.”
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <figure class="text-center">
+          <img src="https://iili.io/KdPRZvV.webp" class="w-full mb-3 border-2 border-[#B8860B]" loading="lazy"/>
+          <figcaption class="text-sm italic text-gray-800">Connected Voices</figcaption>
+        </figure>
+        <figure class="text-center">
+          <img src="https://iili.io/KdP59Cg.webp" class="w-full mb-3 border-2 border-[#B8860B]" loading="lazy"/>
+          <figcaption class="text-sm italic text-gray-800">Community</figcaption>
+        </figure>
+        <figure class="text-center">
+          <img src="https://iili.io/KdPRpZF.webp" class="w-full mb-3 border-2 border-[#B8860B]" loading="lazy"/>
+          <figcaption class="text-sm italic text-gray-800">Shared Moments </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="border-b border-gray-300 py-6">
+      <h3 class="text-2xl font-bold uppercase tracking-wide text-gray-900 border-b-2 border-[#B8860B] inline-block pb-1 mb-4">
+        Former Employees
+      </h3>
+      <p class="text-gray-700 mb-8 leading-relaxed italic max-w-3xl">
+        “His mentorship continues to shape careers and inspires loyalty that endures to this day.”
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <figure class="text-center">
+          <img src="https://iili.io/Kd4ZLa1.webp" class="w-full mb-3 border-2 border-[#B8860B]" loading="lazy"/>
+          <figcaption class="text-sm italic text-gray-800">Contributors</figcaption>
+        </figure>
+        <figure class="text-center">
+          <img src="https://iili.io/Kd4ZP6B.webp" class="w-full mb-3 border-2 border-[#B8860B]" loading="lazy"/>
+          <figcaption class="text-sm italic text-gray-800">Service</figcaption>
+        </figure>
+        <figure class="text-center">
+          <img src="https://iili.io/Kd4Z6GV.webp" class="w-full mb-3 border-2 border-[#B8860B]" loading="lazy"/>
+          <figcaption class="text-sm italic text-gray-800">Legacy</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="border-b border-gray-300 py-6">
+      <h3 class="text-2xl font-bold uppercase tracking-wide text-gray-900 border-b-2 border-[#B8860B] inline-block pb-1 mb-4">
+        Partners & Allies
+      </h3>
+      <p class="text-gray-700 mb-8 leading-relaxed italic max-w-3xl">
+        “Beyond his own circle, he forged bonds with allies and partners who carry his vision forward.”
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <figure class="text-center">
+          <img src="https://iili.io/KdPt5ts.webp" class="w-full mb-3 border-2 border-[#B8860B]" loading="lazy"/>
+          <figcaption class="text-sm italic text-gray-800">Partnership</figcaption>
+        </figure>
+        <figure class="text-center">
+          <img src="https://iili.io/Kdi3o8J.webp" class="w-full mb-3 border-2 border-[#B8860B]" loading="lazy"/>
+          <figcaption class="text-sm italic text-gray-800">Alliance</figcaption>
+        </figure>
+        <figure class="text-center">
+          <img src="https://iili.io/KdiRQJR.webp" class="w-full mb-3 border-2 border-[#B8860B]" loading="lazy"/>
+          <figcaption class="text-sm italic text-gray-800">Collaboration</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="relative w-full bg-white font-montserrat py-6 flex flex-wrap  sm:max-w-sm  md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto" id="impact">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Newspaper Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-4xl font-extrabold uppercase tracking-widest text-gray-900 mb-3">
+        Impact <span class="text-[#B8860B]">&</span> Legacy
+      </h2>
+      
+      <p class="mt-4 text-gray-700 italic max-w-2xl mx-auto">
+        Stories of lives touched and transformed by Zaffar Khan.
+      </p>
+    </div>
+
+    <!-- Newspaper Grid -->
+    <div class="grid md:grid-cols-3 gap-12 border-t border-b border-gray-300 py-10">
+      <!-- Person 1 -->
+      <article class="flex flex-col">
+        <img src="https://iili.io/Kdkjqsn.webp" alt="Person 1" 
+             class="w-full mb-4 border-2 border-[#B8860B]" loading="lazy"/>
+        <p class="text-gray-700 leading-relaxed italic">
+          “He didn't just see my disability, he saw my potential. Thank you for your support”
+        </p>
+      </article>
+
+      <!-- Person 2 -->
+      <article class="flex flex-col">
+        <img src="https://iili.io/Kdk6uF2.webp" alt="Person 2" 
+             class="w-full mb-4 border-2 border-[#B8860B]" loading="lazy"/>
+     
+        <p class="text-gray-700 leading-relaxed italic">
+          “Because of your support, I stopped feeling like a burden and started feeling like I belonged”
+        </p>
+      </article>
+
+      <!-- Person 3 -->
+      <article class="flex flex-col">
+        <img src="https://iili.io/Kdkjn0G.webp" alt="Person 3" 
+             class="w-full mb-4 border-2 border-[#B8860B]" loading="lazy"/>
+        
+        <p class="text-gray-700 leading-relaxed italic">
+          “You made space for me where others didn't and that made the difference”
+        </p>
+      </article>
+    </div>
+    <div class="grid md:grid-cols-3 gap-12 border-t border-b border-gray-300 py-10">
+      <!-- Person 1 -->
+      <article class="flex flex-col">
+        <img src="https://iili.io/KdeUBnV.webp" alt="Person 1" 
+             class="w-full mb-4 border-2 border-[#B8860B]" loading="lazy"/>
+        
+        <p class="text-gray-700 leading-relaxed italic">
+          “Your kindness and support gave me the confidence to live fully and not just exist”
+        </p>
+      </article>
+
+      <!-- Person 2 -->
+      <article class="flex flex-col">
+        <img src="https://iili.io/KdeUzcF.webp" alt="Person 2" 
+             class="w-full mb-4 border-2 border-[#B8860B]" loading="lazy"/>
+        
+        <p class="text-gray-700 leading-relaxed italic">
+          “What you offered wasn’t just assistance—it was compassion, respect, and the kind of encouragement that changes lives.”
+        </p>
+      </article>
+
+      <!-- Person 3 -->
+      <article class="flex flex-col">
+        <img src="https://iili.io/KdeUFuj.webp" alt="Person 3" 
+             class="w-full mb-4 border-2 border-[#B8860B]" loading="lazy"/>
+        <p class="text-gray-700 leading-relaxed italic">
+          “Thanks to you, I now face each day not with fear or frustration, but with peace knowing that I am not alone”
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="relative w-full py-16 bg-[#efefef] border-y-4 flex flex-wrap  mx-auto font-montserrat" id="stories">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12">
+    <!-- Title -->
+     
+    <div class="text-center mb-12">
+      <span class="inline-block bg-[#B8860B]/90 text-[#181818] px-8 py-2 rounded-t-lg font-bold text-xs tracking-widest shadow uppercase mb-6" style="letter-spacing:0.18em;">
+      Narrated by Eric 
+    </span>
+      <h2 class="text-3xl font-bold text-[#181818] uppercase tracking-wide">
+        Featured Stories from community members
+      </h2>
+
+    </div>
+    
+
+    <!-- Newspaper Grid -->
+    <div class="grid md:grid-cols-3 lg:grid-cols-3 gap-10">
+      <!-- Article 1 -->
+      <div class="bg-white border-2 border-[#B8860B] shadow-md hover:shadow-xl transition">
+        <img src="https://iili.io/KCFTSIe.jpg" alt="Lester Drew Story" class="w-full h-56 object-cover border-b-2 border-[#B8860B]" loading="lazy">
+        <div class="p-6 text-center">
+          <p class="text-[#4B3832] italic mb-4">“The truth can walk through fire and never be burned...”</p>
+          <a href="lester-drew.html" class="text-[#B8860B] font-semibold hover:underline">Read the whole story →</a>
+        </div>
+      </div>
+
+      <!-- Article 2 -->
+      <div class="bg-white border-2 border-[#B8860B] shadow-md hover:shadow-xl transition">
+        <img src="https://iili.io/KCIOUqQ.jpg" alt="Jitedra Prasad" class="w-full h-56 object-cover border-b-2 border-[#B8860B]" loading="lazy">
+        <div class="p-6 text-center">
+          <p class="text-[#4B3832] italic mb-4">“A man deeply connected to his tripartite roots of Fiji, India, and Australia...”</p>
+          <a href="jitedra-pasad.html" class="text-[#B8860B] font-semibold hover:underline">Read the whole story →</a>
+        </div>
+      </div>
+
+      <!-- Article 3 -->
+      <div class="bg-white border-2 border-[#B8860B] shadow-md hover:shadow-xl transition">
+        <img src="https://iili.io/KCFTQkP.jpg" alt="Roy Sommerville" class="w-full h-56 object-cover border-b-2 border-[#B8860B]" loading="lazy">
+        <div class="p-6 text-center">
+          <p class="text-[#4B3832] italic mb-4">“In our conversation, I did not see a caricature of a corrupt businessman...”</p>
+          <a href="sommervile.html" class="text-[#B8860B] font-semibold hover:underline">Read the whole story →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Watch Documentary Section - Cinematic/Documentary Feel -->
+<section class="relative w-full min-h-screen flex  mx-auto items-center justify-center bg-black overflow-hidden font-montserrat" id="watch-documentary">
+  <!-- Cinematic Background Image/Video -->
+  
+  <!-- Overlay for drama -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-transparent"></div>
+  <!-- Film grain overlay -->
+  <div class="absolute inset-0 pointer-events-none mix-blend-overlay opacity-5" style="background-image:url('https://iili.io/FbN8cjj.jpg');"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-4xl mx-auto px-6 py-20 text-center flex flex-col items-center">
+    <span class="inline-block bg-[#B8860B]/90 text-[#181818] px-8 py-2 rounded-t-lg font-bold text-xs tracking-widest shadow uppercase mb-6" style="letter-spacing:0.18em;">
+      Full Documentary <span class="block">coming soon</span>
+    </span>
+    <h2 class="text-4xl md:text-5xl font-extrabold uppercase tracking-widest text-white mb-4 drop-shadow-lg" style="font-family: 'Montserrat', serif;">
+      Watch the Trailer
+    </h2>
+    
+    <p class="text-lg md:text-xl text-gray-100/90 font-medium leading-relaxed italic mb-10 max-w-2xl mx-auto">
+      <span class="float-left text-5xl font-extrabold text-[#B8860B] pr-1" style="font-family: 'Montserrat', serif;">E </span>
+      xperience the resilience story of Zaffar Khan through the lens of film maker Eric Kagorora. A journey of resilience, strength, and community awaits.
+    </p>
+    
+    <div class="relative w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-[#B8860B]/40 mx-auto group">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/eRMKmhB7J1k?si=NBVJRMdGFb8RO0wH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      
+      <!-- Film border effect -->
+      <div class="absolute inset-0 border-4 border-[#181818] rounded-2xl pointer-events-none"></div>
+    </div>
+    <div class="mt-10 text-xs text-[#B8860B] tracking-widest uppercase italic">
+      © 2025 Unbroken Documentary. All rights reserved.
+    </div>
+  </div>
+</section>
+
+<!-- Get involved section -->
+
+<section id="get-involved" class="w-full relative flex bg-white py-24 flex-wrap mx-auto px-4 font-montserrat border-y-4  relative overflow-hidden">
+  <!-- Decorative Gold Lines -->
+  
+  <!-- Section Heading -->
+  <div class="max-w-5xl mx-auto relative z-10">
+    <span class="block mx-auto w-max bg-[#B8860B]/90 text-[#181818] px-8 py-2 rounded-t-lg font-bold text-xs tracking-widest shadow uppercase mb-6" style="letter-spacing:0.18em;">
+      COMMUNITY ACTION
+    </span>
+    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 text-center tracking-widest mb-2 uppercase" style="font-family: 'Montserrat', serif;">
+      Get Involved
+    </h2>
+    
+    <div class="flex flex-col md:flex-row gap-10 justify-center items-stretch">
+      <!-- Share Your Story -->
+
+ <!-- Cards Container -->
+<div class="flex flex-col md:flex-row gap-10 justify-center items-stretch">
+
+  <!-- Share Your Story -->
+  <div class="flex-1 bg-white border-2 border-[#B8860B]/30 rounded-2xl shadow-xl hover:shadow-2xl transition p-10 flex flex-col items-center text-center relative group">
+    <div class="mb-6">
+      <span class="inline-flex items-center justify-center w-16 h-16 rounded-full border-2 border-[#B8860B] bg-[#FFF8E1] text-[#B8860B] shadow group-hover:scale-110 transition">
+        <img src="https://iili.io/FykjLFt.png" alt="World Icon">
+      </span>
+    </div>
+    <h3 class="text-2xl font-bold text-[#181818] mb-2 tracking-widest border-b-2 border-[#B8860B] pb-1 uppercase" style="font-family: 'Montserrat', serif;">
+      Share Your Story
+    </h3>
+    <p class="text-gray-700 text-base mb-6 leading-relaxed">
+      Tell your story about how Zaffar Khan has made your life better.<br>
+      <span class="italic text-[#8B4513]">Your voice matters.</span>
+    </p>
+    <button onclick="openModal()" class="mt-auto inline-block px-8 py-2 border-b-2 border-[#B8860B] text-[#181818] font-bold uppercase tracking-wider rounded hover:bg-[#B8860B] hover:text-white transition-all duration-200 shadow group-hover:scale-105">
+      Share Now
+    </button>
+  </div>
+
+  <!-- Join the Conversation -->
+  <div class="flex-1 bg-white border-2 border-[#1E3A8A]/30 rounded-2xl shadow-xl hover:shadow-2xl transition p-10 flex flex-col items-center text-center relative group">
+    <div class="mb-6">
+      <span class="inline-flex items-center justify-center w-16 h-16 rounded-full border-2 border-[#1E3A8A] bg-[#E3EAFD] text-[#1E3A8A] shadow group-hover:scale-110 transition">
+        <img src="https://iili.io/FykjPMN.png" alt="Writing Icon">
+      </span>
+    </div>
+    <h3 class="text-2xl font-bold text-[#181818] mb-2 tracking-widest border-b-2 border-[#1E3A8A] pb-1 uppercase" style="font-family: 'Montserrat', serif;">
+      Join the Conversation
+    </h3>
+    <p class="text-gray-700 text-base mb-6 leading-relaxed">
+      Be part of the community. Connect with us on social media.<br>
+      <span class="italic text-[#1E3A8A]">Amplify the message of unity and strength.</span>
+    </p>
+    <button onclick="toggleSocials()" class="mt-auto inline-block px-8 py-2 border-b-2 border-[#1E3A8A] text-[#181818] font-bold uppercase tracking-wider rounded hover:bg-[#1E3A8A] hover:text-white transition-all duration-200 shadow group-hover:scale-105">
+      Join Online
+    </button>
+    <div id="socialLinks" class="hidden mt-4 space-x-4">
+      <a href="https://www.facebook.com/profile.php?id=61579449914951" target="_blank" class="text-[#1E3A8A] hover:text-blue-700">
+        <i class="fab fa-facebook-f text-2xl"></i>
+      </a>
+      <a href="https://x.com/unnbroken61" target="_blank" class="text-[#1E3A8A] hover:text-gray-900">
+        <i class="fab fa-x-twitter text-2xl"></i>
+      </a>
+      <a href="https://www.instagram.com/unbroken.61/?utm_source=ig_web_button_share_sheet" target="_blank" class="text-[#1E3A8A] hover:text-pink-600">
+        <i class="fab fa-instagram text-2xl"></i>
+      </a>
+      <a href="https://www.youtube.com/@UnbrokenVoice_61" target="_blank" class="text-[#1E3A8A] hover:text-red-500">
+        <i class="fab fa-youtube text-2xl"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="storyModal" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50">
+  <div class="bg-white rounded-2xl shadow-xl max-w-lg w-full p-8 relative">
+    <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-black">&times;</button>
+    <h3 class="text-xl font-bold text-[#181818] mb-6 border-b-2 border-[#B8860B] pb-2 uppercase tracking-widest" style="font-family: 'Montserrat', serif;">
+      Share Your Story
+    </h3>
+    <!-- Google Login -->
+    <div id="google-login-btn" class="mb-6 text-center">
+      <button onclick="googleLogin()" class="px-6 py-2 bg-[#1E3A8A] text-white rounded font-bold hover:bg-[#0a0a0a]">
+        Login with Google
+      </button>
+    </div>
+    <!-- Story Form -->
+    <form id="storyForm" class="hidden flex flex-col space-y-4">
+      <input type="text" name="Name" id="name" class="w-full border rounded-lg p-3" placeholder="Your Name" required>
+      <textarea name="story" rows="4" class="w-full border rounded-lg p-3" placeholder="Share your story..."></textarea>
+      <button type="submit" class="px-6 py-2 bg-[#B8860B] text-white rounded font-bold hover:bg-[#8B6508]">
+        Submit Story
+      </button>
+    </form>
+  </div>
+</div>
+
+
+<!-- FontAwesome for icons -->
+
+    </div>
+    <!-- Decorative underline for journal feel -->
+    <div class="mx-auto mt-16 w-1/2 h-0.5 bg-[#8B4513]/20 rounded-full"></div>
+  </div>
+</section>
+
+<section id="press-kit" class="w-full relative bg-gradient-to-br from-[#F5F5DC] via-[#f9fafb] to-[#e5e7eb] py-16 p-6 font-montserrat border-y-2 relative overflow-hidden">
+  
+ 
+  <div class="max-w-5xl mx-auto relative z-10">
+    <span class="block mx-auto w-max bg-[#B8860B]/90 text-[#181818] px-8 py-2 rounded-t-lg font-bold text-xs tracking-widest shadow uppercase mb-6" style="letter-spacing:0.18em;">
+      FOR THE PRESS
+    </span>
+    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 text-center tracking-widest mb-2 uppercase" style="font-family: 'Montserrat', serif;">
+      Press Kit
+    </h2>
+    
+    <p class="text-lg md:text-xl text-gray-700 text-center mb-12 max-w-2xl mx-auto italic">
+      Access our official press kit for media inquiries, high-resolution images, director bios, and everything you need to tell the story of <span class="text-[#B8860B] font-bold">UNBROKEN</span>.
+    </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+  <!-- Press Kit Card -->
+  <div class="bg-white border-2 border-[#B8860B]/30 rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition group">
+    <span class="inline-flex items-center justify-center w-16 h-16 rounded-full text-3xl bg-[#FFF8E1] text-[#B8860B] shadow mb-6 group-hover:scale-110 transition">
+      <img src="https://iili.io/Fyvo3Ja.png" alt="news-feed">
+    </span>
+    <h3 class="text-xl font-bold text-[#181818] mb-2 tracking-widest uppercase" style="font-family: 'Montserrat', serif;">Media Kit</h3>
+    <p class="text-gray-700 text-base mb-4 leading-relaxed">Official press release for journalists and reviewers.</p>
+    <a href="downloads/Official Press release statement.docx" download class="inline-block px-6 py-2 border-b-2 border-[#B8860B] text-[#181818] font-bold uppercase tracking-wider rounded hover:bg-[#B8860B] hover:text-white transition-all duration-200 shadow group-hover:scale-105">
+      Download PDF
+    </a>
+  </div>
+
+  <!-- Images Card -->
+  <div class="bg-white border-2 border-[#1E3A8A]/30 rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition group">
+    <span class="inline-flex items-center justify-center w-16 h-16 rounded-full text-3xl bg-[#E3EAFD] text-[#1E3A8A] shadow mb-6 group-hover:scale-110 transition">
+      <img src="https://iili.io/FyvoHf1.png" alt="picture">
+    </span>
+    <h3 class="text-xl font-bold text-[#181818] mb-2 tracking-widest uppercase" style="font-family: 'Montserrat', serif;">Images</h3>
+    <p class="text-gray-700 text-base mb-4 leading-relaxed">High-resolution stills, posters, and behind-the-scenes photos for editorial use.</p>
+    <a href="downloads/Media.zip" download class="inline-block px-6 py-2 border-b-2 border-[#1E3A8A] text-[#181818] font-bold uppercase tracking-wider rounded hover:bg-[#1E3A8A] hover:text-white transition-all duration-200 shadow group-hover:scale-105">
+      Download ZIP
+    </a>
+  </div>
+
+  <!-- Director Bio Card -->
+  <div class="bg-white border-2 border-[#8B4513]/30 rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition group">
+    <span class="inline-flex items-center justify-center w-16 h-16 text-3xl bg-[#F9E8D2] text-[#8B4513] shadow mb-6 group-hover:scale-110 transition">
+      <img src="https://iili.io/FyvoF5J.png" alt="cinema">
+    </span>
+    <h3 class="text-xl font-bold text-[#181818] mb-2 tracking-widest uppercase" style="font-family: 'Montserrat', serif;">Director Bio</h3>
+    <p class="text-gray-700 text-base mb-4 leading-relaxed">Director's statement, screening information and interview opportunities.</p>
+    <a href="downloads/DSC05108.jpg" download class="inline-block px-6 py-2 border-b-2 border-[#8B4513] text-[#181818] font-bold uppercase tracking-wider rounded hover:bg-[#8B4513] hover:text-white transition-all duration-200 shadow group-hover:scale-105">
+      Download PDF
+    </a>
+  </div>
+</div>
+
+    </div>
+    <div class="flex justify-center">
+      <a href="downloads/Full Press Kit.zip" class=" px-10 py-4 bg-[#B8860B] text-[#181818] font-bold uppercase tracking-wider rounded-2xl shadow-lg hover:bg-[#8B4513] hover:text-white transition-all duration-200 text-lg">
+        Download Full <span class="block text-center">Press Kit</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-16 bg-[#F5F5DC]  font-montserrat overflow-hidden">
+  <!-- Title -->
+  <div class="text-center mb-12 relative">
+    <h2 class="text-3xl md:text-4xl font-bold text-[#333] relative inline-block">
+      Our Story in Motion
+      
+    </h2>
+  </div>
+
+  <!-- Video + Explanation Grid -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-6 lg:px-12">
+    <!-- Video -->
+    <div class="overflow-hidden shadow-xl border-4 border-[#B8860B]/60 bg-white rounded-2xl">
+      <div class="w-full h-[280px] sm:h-[340px] md:h-[420px] lg:h-[520px]">
+        <iframe 
+          class="w-full h-full rounded-xl" 
+          src="https://www.youtube.com/embed/ZPQ3UMJJFZY?si=Guy9RJUxBo9oRADI" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Explanation -->
+    <div class="text-[#333]">
+      <h3 class="text-2xl md:text-3xl font-bold mb-6">The Values Behind Our Facilities</h3>
+      <p class="mb-4 leading-relaxed text-lg">
+        Our facilities are designed with a commitment to provide support, safety, community engagement and dignity for All. We are passionate about what we do, and we work from the heart.
+      </p>
+      <p class="leading-relaxed text-lg">
+        We inspire hope, joy and ability. This is more than just a business — it’s a passion, a calling.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Contact & Connect Section - Editorial/Documentary Style -->
+<section id="contact" class="relative w-full py-16 bg-gray-100 font-montserrat overflow-hidden">
+  <div class="max-w-4xl mx-auto px-6">
+    <!-- Section Header -->
+    <span class="block mx-auto w-max bg-[#B8860B]/90 text-[#181818] px-8 py-2 rounded-t-lg font-bold text-xs tracking-widest shadow uppercase mb-6" style="letter-spacing:0.18em;">
+      CONTACT US
+    </span>
+    <h2 class="text-4xl md:text-5xl uppercase text-gray-900 text-center font-bold mb-4">
+      Contact <span class="text-[#B8860B]">&</span> Connect
+    </h2>
+    <p class="text-lg md:text-xl text-gray-700 italic max-w-2xl mx-auto text-center mb-12">
+      For general inquiries or media requests, reach out using the form below.<br>
+      <span class="text-[#8B4513] font-semibold">Our team responds promptly and confidentially.</span>
+    </p>
+
+    <!-- Tabs -->
+    <div class="flex justify-center mb-10">
+      <button 
+        id="tab-general" 
+        class="tab-btn px-8 py-3 border-b-4 border-[#B8860B] font-semibold uppercase tracking-wider text-gray-900 bg-white rounded-t-md shadow transition focus:outline-none hover:text-[#B8860B]"
+      >
+        General Inquiry
+      </button>
+      <button 
+        id="tab-media" 
+        class="tab-btn px-8 py-3 border-b-4 border-transparent font-semibold uppercase tracking-wider text-gray-500 bg-white rounded-t-md shadow transition focus:outline-none hover:text-[#B8860B]"
+      >
+        Media Request
+      </button>
+    </div>
+
+    <!-- Forms -->
+    <div class="bg-white shadow-lg rounded-2xl p-8">
+      <!-- General Form -->
+      <form id="form-general" class="space-y-8" action="https://formspree.io/f/xnnbqeba" method="POST">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <label class="block mb-2 font-semibold uppercase text-gray-800">Name</label>
+            <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-[#B8860B]" placeholder="Your Name">
+          </div>
+          <div>
+            <label class="block mb-2 font-semibold uppercase text-gray-800">Email</label>
+            <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-[#B8860B]" placeholder="you@email.com">
+          </div>
+        </div>
+        <div>
+          <label class="block mb-2 font-semibold uppercase text-gray-800">Message</label>
+          <textarea name="message" rows="5" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-[#B8860B]" placeholder="How can we help you?"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 rounded-xl bg-[#B8860B] text-white font-bold uppercase tracking-wider text-lg shadow-md hover:bg-[#a97b13] transition">Send Message</button>
+      </form>
+
+      <!-- Media Form -->
+      <form id="form-media" class="space-y-8 hidden" action="https://formspree.io/f/xandyrdq" method="POST">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <label class="block mb-2 font-semibold uppercase text-gray-800">Name</label>
+            <input type="text" name="media_name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-[#B8860B]" placeholder="Your Name">
+          </div>
+          <div>
+            <label class="block mb-2 font-semibold uppercase text-gray-800">Email</label>
+            <input type="email" name="media_email" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-[#B8860B]" placeholder="media@company.com">
+          </div>
+        </div>
+        <div>
+          <label class="block mb-2 font-semibold uppercase text-gray-800">Media Organization</label>
+          <input type="text" name="organization" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-[#B8860B]" placeholder="Organization Name">
+        </div>
+        <div>
+          <label class="block mb-2 font-semibold uppercase text-gray-800">Request Details</label>
+          <textarea name="media_message" rows="5" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-[#B8860B]" placeholder="Describe your media request"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 rounded-xl bg-[#B8860B] text-white font-bold uppercase tracking-wider text-lg shadow-md hover:bg-[#a97b13] transition">Submit Media Request</button>
+      </form>
+    </div>
+
+    <!-- Success Message -->
+    <div id="contact-success" class="hidden mt-8 text-center text-[#8B4513] font-semibold text-lg tracking-wide">
+       Thank you! Your message has been sent.
+    </div>
+
+    <!-- Contact Info -->
+    <div class="mt-10 text-center text-sm text-[#8B4513] italic">
+      Prefer email? Reach us at 
+      <a href="mailto:info@unbroken61.com" class="underline hover:text-[#B8860B] transition">info@unbroken61.com</a>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const generalTab = document.getElementById("tab-general");
+    const mediaTab = document.getElementById("tab-media");
+    const generalForm = document.getElementById("form-general");
+    const mediaForm = document.getElementById("form-media");
+
+    generalTab.addEventListener("click", () => {
+      generalForm.classList.remove("hidden");
+      mediaForm.classList.add("hidden");
+      generalTab.classList.add("text-gray-900", "border-[#B8860B]");
+      generalTab.classList.remove("text-gray-500", "border-transparent");
+      mediaTab.classList.remove("text-gray-900", "border-[#B8860B]");
+      mediaTab.classList.add("text-gray-500", "border-transparent");
+    });
+
+    mediaTab.addEventListener("click", () => {
+      mediaForm.classList.remove("hidden");
+      generalForm.classList.add("hidden");
+      mediaTab.classList.add("text-gray-900", "border-[#B8860B]");
+      mediaTab.classList.remove("text-gray-500", "border-transparent");
+      generalTab.classList.remove("text-gray-900", "border-[#B8860B]");
+      generalTab.classList.add("text-gray-500", "border-transparent");
+    });
+  </script>
+</section>
+
+ 
+<!-- ...existing code... -->
+ <!-- community stories -->
+  <!-- Community Stories Section -->
+<!-- <section class="mt-12">
+  <h3 class="text-center text-2xl font-bold text-[#181818] mb-10 border-b-2 border-[#B8860B] pb-2 uppercase tracking-widest"
+      style="font-family: 'Montserrat', serif;">
+    Community Stories
+  </h3> -->
+
+  <!-- Newspaper style wrapper -->
+  <!-- <div id="community-stories" 
+       class="columns-1 sm:columns-2 lg:columns-3 gap-10 [column-fill:_balance]"> -->
+
+    <!-- Example story block -->
+    <!-- <article class="break-inside-avoid mb-10 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+      <h4 class="font-semibold text-xl text-[#181818] mb-3" style="font-family: 'Montserrat', serif;">
+        John Doe
+      </h4>
+      <p class="text-gray-700 leading-relaxed text-base">
+        “This is where someone’s inspiring story will appear. The style mimics a column in a newspaper, without visible dividing lines.”
+      </p>
+    </article> -->
+
+    <!-- You can add more blocks here (JS will inject them dynamically) -->
+    <!-- <article class="break-inside-avoid mb-10 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+      <h4 class="font-semibold text-xl text-[#181818] mb-3" style="font-family: 'Montserrat', serif;">
+        Jane Smith
+      </h4>
+      <p class="text-gray-700 leading-relaxed text-base">
+        “Another inspiring story goes here. Notice how each block feels like its own article in a clean, 3-column newspaper layout.”
+      </p>
+    </article>
+
+  </div>
+  <div class="grid md:grid-cols-3 gap-12 border-t border-b border-gray-300 py-10"></div>
+</section> -->
+
+<!-- Footer -->
+<footer class="bg-gradient-to-br from-[#1E3A8A] via-[#181818] to-[#8B4513] text-[#F5F5DC] pt-14 pb-8 relative z-10 border-t-4 border-[#B8860B] font-montserrat shadow-2xl">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:justify-between items-start gap-12">
+    
+    <!-- Logo/Brand & Tagline -->
+    <div class="mb-8 md:mb-0 flex flex-col items-start gap-3">
+      <div class="flex items-center gap-4 md:gap-4">
+        <img src="https://iili.io/Kd7Grej.webp" alt="Unbroken Logo" class="w-18 h-24 rounded-full border-2 border-[#B8860B] shadow-xl">
+        <span class="text-3xl font-extrabold tracking-[0.2em] uppercase text-[#F5F5DC] drop-shadow-lg">
+          <span class="text-[#B8860B]">UN</span>BROKEN
+        </span>
+      </div>
+      <span class="text-xs mt-2 italic tracking-wide text-[#F5F5DC]/80">
+        A Documentary of Resilience & Renewal
+      </span>
+    </div>
+
+    <!-- Navigation Links in 2 Columns -->
+    <nav class="mb-8 md:mb-0 md:px-4 ">
+      <ul class="grid grid-cols-2 gap-x-10 gap-y-3 text-sm font-semibold tracking-widest uppercase">
+        <li>
+          <a href="#home" class="block px-3 py-1 rounded-md hover:text-[#B8860B] transition">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#meet-zaffar-khan" class="block px-3 py-1 rounded-md hover:text-[#B8860B] transition">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="#stories" class="block px-3 py-1 rounded-md  hover:text-[#B8860B] transition">
+            Community Voices
+          </a>
+        </li>
+        <li>
+          <a href="#watch-documentary" class="block px-3 py-1 rounded-md hover:text-[#B8860B] transition">
+            Watch
+          </a>
+        </li>
+        <li>
+          <a href="#get-involved" class="block px-3 py-1 rounded-md hover:text-[#B8860B] transition">
+            Get Involved
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="block px-3 py-1 rounded-md hover:text-[#B8860B] transition">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Social Media -->
+    <div class="flex flex-col items-start gap-6 w-full md:w-auto">
+      <div class="flex gap-5 text-xl">
+        <a href="https://www.facebook.com/profile.php?id=61579449914951" target="_blank" class="hover:text-blue-600 transition">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://x.com/unnbroken61" target="_blank" class="hover:text-gray-400 transition">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/unbroken.61/?utm_source=ig_web_button_share_sheet" target="_blank" class="hover:text-pink-500 transition">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@UnbrokenVoice_61" target="_blank" class="hover:text-red-500 transition">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="mt-12 border-t border-[#B8860B]/40 pt-6 text-center text-xs tracking-widest text-[#F5F5DC]/70 uppercase">
+    &copy; 2025 UNBROKEN. All rights reserved. | 
+    <span class="italic">Resilience . Community . Strength</span>
+  </div>
+</footer>
+
+<!-- ...existing code... -->
+
+
+<style>
+.press-kit {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #1c1c1c, #333);
+  color: #fff;
+  text-align: center;
+}
+.press-kit h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.press-kit .intro {
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+.press-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+.press-card {
+  background: #222;
+  border-radius: 15px;
+  padding: 30px 20px;
+  width: 280px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.press-card:hover {
+  transform: translateY(-8px);
+  background: #292929;
+}
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.press-card h3 {
+  margin-bottom: 10px;
+}
+.press-card p {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  color: #bbb;
+}
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: #ff4d6d;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.download-btn:hover {
+  background: #ff3357;
+  transform: scale(1.05);
+}
+</style>
+
+
+
+
+<!-- Firebase SDKs -->
+<!-- Firebase Compat SDKs (for plain <script>) -->
+<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore-compat.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
